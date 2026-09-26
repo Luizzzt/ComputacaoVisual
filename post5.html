@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Encontrando as bordas de uma imagem - Computação Visual</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                Blog de Computação Visual
+            </a>
+        </div>
+    </header>
+
+    <main class="container post-page">
+
+        <article>
+
+            <div class="post-header">
+
+                <span class="post-date">
+                    22 de setembro de 2026
+                </span>
+
+                <h1>
+                    Encontrando as bordas de uma imagem
+                </h1>
+
+            </div>
+
+            <div class="post-text">
+
+                <p>
+                    Nesta aula começamos a estudar detecção de bordas. Eu achei interessante porque, de certa forma, é uma maneira de fazer o computador perceber partes importantes de uma imagem.
+                </p>
+
+                <p>
+                    A ideia principal é encontrar mudanças bruscas nos valores dos pixels. Quando uma região clara passa para uma região escura, por exemplo, existe uma mudança que pode indicar uma borda.
+                </p>
+
+                <h2>
+                    Mas como o computador encontra uma borda?
+                </h2>
+
+                <p>
+                    Uma das coisas que vimos foi que os pixels normalmente têm valores parecidos com os seus vizinhos. Quando um pixel é muito diferente dos que estão ao redor, ele pode indicar que existe alguma mudança importante naquela região.
+                </p>
+
+                <p>
+                    Para encontrar essas mudanças podemos usar o gradiente. Ele indica a direção em que a intensidade da imagem muda mais rapidamente e também mostra a força dessa mudança. Uma borda mais nítida apresenta uma mudança maior, enquanto uma transição mais suave apresenta uma magnitude menor.
+                </p>
+
+                <p>
+                    Também vimos que as bordas podem aparecer por diferentes motivos, como mudanças de iluminação, cor, profundidade ou até da superfície de um objeto.
+                </p>
+
+                <h2>
+                    O problema do ruído
+                </h2>
+
+                <p>
+                    Uma coisa que achei interessante foi descobrir que o ruído pode atrapalhar bastante esse processo. Como o ruído também cria diferenças entre os pixels, o computador pode acabar interpretando essas pequenas diferenças como bordas.
+                </p>
+
+                <p>
+                    Por isso, antes de procurar as bordas, podemos suavizar a imagem. A suavização ajuda a diminuir o efeito do ruído e facilita a identificação das mudanças que realmente importam.
+                </p>
+
+                <h2>
+                    O detector de Canny
+                </h2>
+
+                <p>
+                    No final da aula vimos o detector de bordas de Canny, que reúne várias dessas etapas. Ele utiliza as derivadas da Gaussiana, encontra a magnitude e a orientação do gradiente, faz a supressão de não-máximos e depois utiliza limiarização e histerese para definir as bordas.
+                </p>
+
+                <p>
+                    O que achei mais interessante foi perceber que não é simplesmente colocar um filtro na imagem e pronto. Existem várias etapas para tentar encontrar as bordas corretas, evitando tanto deixar de encontrar uma borda real quanto identificar coisas que são apenas ruído.
+                </p>
+
+                <p>
+                    Também vimos que o tamanho do filtro influencia o resultado. Um valor menor consegue encontrar detalhes mais finos, enquanto um valor maior faz uma suavização maior e tende a encontrar bordas em uma escala mais ampla.
+                </p>
+
+                <p>
+                    Depois dessa aula, comecei a olhar para uma imagem de uma forma um pouco diferente. Em vez de pensar apenas naquilo que estou vendo, dá para imaginar que o computador está analisando as mudanças entre os pixels para descobrir onde estão os limites dos objetos.
+                </p>
+
+            </div>
+
+        </article>
+
+    </main>
+
+</body>
+
+</html>
