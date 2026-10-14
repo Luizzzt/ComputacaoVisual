@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Domínio da Frequência - Computação Visual</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                Blog de Computação Visual
+            </a>
+        </div>
+    </header>
+
+    <main class="container post-page">
+
+        <article>
+
+            <div class="post-header">
+
+                <span class="post-date">
+                    Setembro de 2026
+                </span>
+
+                <h1>
+                    O que existe por trás de uma imagem?
+                </h1>
+
+            </div>
+
+            <div class="post-text">
+
+                <p>
+                    Nesta aula, começamos a estudar o domínio da frequência
+                    e a Transformada de Fourier. No começo, o assunto pareceu
+                    um pouco complicado, principalmente por envolver fórmulas
+                    e conceitos matemáticos que eu ainda não conhecia muito bem.
+                </p>
+
+                <p>
+                    Pelo que entendi, a ideia é analisar uma imagem de uma
+                    maneira diferente. Em vez de olhar apenas para os pixels
+                    e suas posições, podemos estudar as frequências que estão
+                    presentes nela. Isso ajuda a entender melhor as mudanças
+                    de intensidade, os detalhes e as variações que formam uma imagem.
+                </p>
+
+                <h2>Mas o que são essas frequências?</h2>
+
+                <p>
+                    Uma coisa que achei interessante foi entender que uma imagem
+                    pode ter regiões mais uniformes e outras com muitas mudanças,
+                    como bordas, linhas e pequenos detalhes. Essas diferenças
+                    podem ser analisadas usando o domínio da frequência.
+                </p>
+
+                <p>
+                    Também vimos a Transformada de Fourier, que permite passar
+                    do domínio espacial para o domínio da frequência. Existe
+                    ainda a transformada inversa, que permite recuperar a imagem
+                    original a partir dessas informações.
+                </p>
+
+                <figure style="margin: 35px 0 40px;">
+                    <svg viewBox="0 0 700 270"
+                         xmlns="http://www.w3.org/2000/svg"
+                         role="img"
+                         aria-label="Ilustração de uma onda simples e de uma onda com variações mais frequentes"
+                         style="width: 100%; height: auto; display: block;">
+
+                        <rect x="1" y="1" width="698" height="268"
+                              rx="8" fill="#eeede8"
+                              stroke="#d8d6cf"/>
+
+                        <text x="28" y="35"
+                              font-family="Arial, sans-serif"
+                              font-size="16" fill="#202936">
+                            Mudanças mais suaves
+                        </text>
+
+                        <line x1="30" y1="95" x2="325" y2="95"
+                              stroke="#b5b3ac" stroke-width="1"/>
+
+                        <path d="M30 95
+                                 C55 35, 80 35, 105 95
+                                 S155 155, 180 95
+                                 S230 35, 255 95
+                                 S305 155, 325 95"
+                              fill="none" stroke="#536d8a"
+                              stroke-width="3"/>
+
+                        <text x="375" y="35"
+                              font-family="Arial, sans-serif"
+                              font-size="16" fill="#202936">
+                            Mudanças mais rápidas
+                        </text>
+
+                        <line x1="375" y1="95" x2="670" y2="95"
+                              stroke="#b5b3ac" stroke-width="1"/>
+
+                        <path d="M375 95
+                                 C385 45, 395 45, 405 95
+                                 S425 145, 435 95
+                                 S455 45, 465 95
+                                 S485 145, 495 95
+                                 S515 45, 525 95
+                                 S545 145, 555 95
+                                 S575 45, 585 95
+                                 S605 145, 615 95
+                                 S635 45, 645 95
+                                 S660 140, 670 95"
+                              fill="none" stroke="#a45d46"
+                              stroke-width="3"/>
+
+                        <text x="350" y="205"
+                              text-anchor="middle"
+                              font-family="Arial, sans-serif"
+                              font-size="14" fill="#58616d">
+                            Uma forma de visualizar diferenças de frequência
+                        </text>
+
+                        <text x="350" y="230"
+                              text-anchor="middle"
+                              font-family="Arial, sans-serif"
+                              font-size="12" fill="#777">
+                            Ilustração conceitual
+                        </text>
+                    </svg>
+                </figure>
+
+                <h2>Os filtros também fazem diferença</h2>
+
+                <p>
+                    Outro assunto que vimos foi o uso de filtros. Um exemplo
+                    é o filtro passa-baixa, que reduz as frequências mais altas
+                    e pode deixar a imagem mais suave ou borrada. Isso acontece
+                    porque alguns detalhes e mudanças mais rápidas de intensidade
+                    acabam sendo atenuados.
+                </p>
+
+                <p>
+                    Achei interessante perceber que um efeito que parece simples,
+                    como deixar uma foto desfocada, também pode ser entendido
+                    por meio desses conceitos matemáticos.
+                </p>
+
+                <h2>O que é aliasing?</h2>
+
+                <p>
+                    Também estudamos o aliasing, que pode aparecer quando uma
+                    imagem não é amostrada com informação suficiente para
+                    representar seus detalhes. Na prática, isso pode causar
+                    linhas serrilhadas e padrões estranhos, principalmente
+                    quando uma imagem é redimensionada.
+                </p>
+
+                <p>
+                    Para diminuir esse problema, podemos usar o antialiasing,
+                    que ajuda a suavizar a imagem antes da redução ou da
+                    reamostragem. Assim, alguns detalhes muito pequenos são
+                    suavizados para evitar distorções visuais.
+                </p>
+
+                <p>
+                    No geral, essa aula me fez perceber que a qualidade de uma
+                    imagem não depende apenas de sua aparência na tela. Existe
+                    toda uma parte matemática por trás de como ela é representada,
+                    filtrada e redimensionada. Ainda preciso entender melhor
+                    algumas fórmulas, mas comecei a perceber como esses conceitos
+                    podem ser aplicados no processamento de imagens.
+                </p>
+
+            </div>
+
+        </article>
+
+    </main>
+
+</body>
+
+</html>
